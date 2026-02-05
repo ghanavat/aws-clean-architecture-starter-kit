@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Saeed Ghanavat",
+  "classifications": [
+    "Common",
+    "WebApi",
+    "ClassLibrary",
+    "xUnit"
+  ],
+  "name": "Ghanavats Clean Architecture Templates",
+  "description": "A template for creating an empty Clean Architecture application that can run on .NET on Windows, Linux and macOS",
+  "identity": "Ghanavats.CleanArchitecture.Templates",
+  "shortName": "ghanavats_aws_cleanarc_starter",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Ghanavats.CleanArchitecture",
+  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "Ghanavats.CleanArchitecture.sln"
+    }
+  ],
+  "postActions": [
+    {
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "description": "Restore NuGet packages required by this project.",
+      "condition": "(!skipRestore)",
+      "continueOnError": true,
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ]
+    }
+  ]
+}

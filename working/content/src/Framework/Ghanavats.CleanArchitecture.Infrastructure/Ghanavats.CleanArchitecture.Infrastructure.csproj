@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Ghanavats.CleanArchitecture.Core\Ghanavats.CleanArchitecture.Core.csproj" />
+    <ProjectReference Include="..\..\Application\Ghanavats.CleanArchitecture.UseCases\Ghanavats.CleanArchitecture.UseCases.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
