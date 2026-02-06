@@ -1,5 +1,5 @@
 {
-  "app": "dotnet run --project GhanavatsCleanArchitectureIaCAws/GhanavatsCleanArchitectureIaCAws.csproj",
+  "app": "dotnet run --project Ghanavats.CleanArchitecture.IaC.Aws/Ghanavats.CleanArchitecture.IaC.Aws.csproj",
   "watch": {
     "include": [
       "**"
