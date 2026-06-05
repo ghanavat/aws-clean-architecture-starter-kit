@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Ghanavats.CleanArchitecture.IaC.Aws;
 
 namespace GhanavatsCleanArchitectureIaCAws
 {

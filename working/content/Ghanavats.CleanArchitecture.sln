@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -36,6 +36,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.Shared.Tests", "tests\Ghanavats.CleanArchitecture.Shared.Tests\Ghanavats.CleanArchitecture.Shared.Tests.csproj", "{D4C8DDAE-F929-4D5E-804B-6B5A100B9FAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.IaC.Aws", "src\Framework\Ghanavats.CleanArchitecture.IaC.AWS\Ghanavats.CleanArchitecture.IaC.Aws.csproj", "{E24E051C-997D-4E7B-9002-E5DA181AEEA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{6DB56DA9-9018-454B-9F21-7CD0E0A07205}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,8 +203,7 @@ Global
 		{6DCDBEDA-094A-442D-B58C-218365E5E00C} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{AF57D76D-8FE7-4BD0-B269-47D058F7A98D} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{BD8F7404-6B55-44B0-9A5C-9851F21D031A} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
-		{D4C8DDAE-F929-4D5E-804B-6B5A100B9FAB} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
-		{8B474465-7EFE-1E66-3C07-9A8234BF2160} = {E0AD1809-C64F-3D39-45E0-E424261CE16D}
+		{D4C8DDAE-F929-4D5E-804B-6B5A100B9FAB} = {0AB3BF05-4346-4AA6-1389-037BE0695223}		
 		{E24E051C-997D-4E7B-9002-E5DA181AEEA6} = {E0AD1809-C64F-3D39-45E0-E424261CE16D}
 	EndGlobalSection
 EndGlobal
