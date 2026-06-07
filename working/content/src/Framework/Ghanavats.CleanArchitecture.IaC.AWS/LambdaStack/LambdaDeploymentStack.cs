@@ -1,0 +1,51 @@
+using Amazon.CDK;
+using Amazon.CDK.AWS.Lambda;
+using Constructs;
+
+namespace Ghanavats.CleanArchitecture.IaC.Aws.LambdaStack;
+
+public class LambdaDeploymentStack : Stack
+{
+    internal static Function CleanArchitectureLambda;
+    
+    internal LambdaDeploymentStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
+    {
+        #region Lambda Functions
+
+        const string apiProjectPath = "src/InterfaceAdapters/Ghanavats.CleanArchitecture.Api";
+
+        var lambdaFunction = new Function(this, "CleanArchitecture_Function", new FunctionProps
+        {
+            Runtime = Runtime.DOTNET_10,
+            MemorySize = 1024,
+            Handler = "Ghanavats.CleanArchitecture.Api",
+            Code = Code.FromAsset("../../../", new Amazon.CDK.AWS.S3.Assets.AssetOptions
+            {
+                Bundling = new BundlingOptions
+                {
+                    Image = Runtime.DOTNET_10.BundlingImage,
+                    User = "root",
+                    OutputType = BundlingOutput.ARCHIVED,
+                    Command =
+                    [
+                        "/bin/sh",
+                        "-c",
+                        "mkdir -p /tmp/build" +
+                        " && cp -R /asset-input/. /tmp/build" +
+                        " && cd /tmp/build" +
+                        " && dotnet tool install -g Amazon.Lambda.Tools" +
+                        " && export PATH=\"$PATH:/root/.dotnet/tools\"" +
+                        " && export DOTNET_CLI_HOME=/tmp" +
+                        " && export NUGET_PACKAGES=/tmp/nuget" +
+                        $" && dotnet restore {apiProjectPath}/Ghanavats.CleanArchitecture.Api.csproj" +
+                        $" && dotnet lambda package --project-location {apiProjectPath} --configuration Release --output-package /asset-output/cleanarchitecture_function.zip"
+                    ]
+                }
+            })
+        });
+        
+        CleanArchitectureLambda = lambdaFunction;
+
+        #endregion
+    }
+}

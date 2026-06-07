@@ -1,8 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\tests\Ghanavats.CleanArchitecture.Core.Tests\Ghanavats.CleanArchitecture.Core.Tests.csproj" />
-    <ProjectReference Include="..\..\..\tests\Ghanavats.CleanArchitecture.UseCases.Tests\Ghanavats.CleanArchitecture.UseCases.Tests.csproj" />
     <ProjectReference Include="..\..\Core\Ghanavats.CleanArchitecture.Core\Ghanavats.CleanArchitecture.Core.csproj" />
     <ProjectReference Include="..\..\Application\Ghanavats.CleanArchitecture.UseCases\Ghanavats.CleanArchitecture.UseCases.csproj" />
   </ItemGroup>

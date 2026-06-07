@@ -9,12 +9,19 @@
 
   <ItemGroup>
     <!-- CDK Construct Library dependencies -->
-    <PackageReference Include="Amazon.CDK.Lib" Version="2.143.0" />
-    <PackageReference Include="Constructs" Version="[10.0.0,11.0.0)" />
+    <PackageReference Include="Amazon.CDK.Lib" Version="2.258.0" />
+    <PackageReference Include="Constructs" Version="10.6.0" />
 
     <!-- jsii Roslyn analyzers (un-comment to obtain compile-time checks for missing required props
     <PackageReference Include="Amazon.Jsii.Analyzers" Version="*" PrivateAssets="all" />
     -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Ghanavats.CleanArchitecture.UseCases\Ghanavats.CleanArchitecture.UseCases.csproj" />
+    <ProjectReference Include="..\..\Core\Ghanavats.CleanArchitecture.Core\Ghanavats.CleanArchitecture.Core.csproj" />
+    <ProjectReference Include="..\..\Shared\Ghanavats.CleanArchitecture.Shared\Ghanavats.CleanArchitecture.Shared.csproj" />
+    <ProjectReference Include="..\Ghanavats.CleanArchitecture.Infrastructure\Ghanavats.CleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
