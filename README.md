@@ -39,3 +39,8 @@ CDK uploads deployment assets and the actual source code onto S3 if it is chosen
 These are managed by CDK bootstrap resources, not by the application stack.
 When the bucket is created by CDK,
 a Lifecycle rule is created to permanently delete objects after 30 days.
+
+# DynamoDb
+I figured that EF Core does not have support for DynamoDb. Also figured that AWS has its own DbContext for DynamoDb.
+So I decided to use it in this template. 
+I would personally like to extend my Ghanavats.Repository package with DynamoDb support, but it's an overkill at this time.

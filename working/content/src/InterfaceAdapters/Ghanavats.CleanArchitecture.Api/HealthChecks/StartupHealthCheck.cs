@@ -5,7 +5,7 @@ namespace Ghanavats.CleanArchitecture.Api.HealthChecks;
 /// <summary>
 /// A simple example readiness and liveness health check
 /// </summary>
-public class StartupHealthCheck : IHealthCheck
+public sealed class StartupHealthCheck : IHealthCheck
 {
     private volatile bool _isReady;
 

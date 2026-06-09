@@ -13,20 +13,38 @@ public class GetPersonDetailsRequestValidatorTests
         _validator = new GetPersonDetailsRequestValidator();
     }
 
-    [Fact]
-    public async Task ValidatePersonId_ShouldFail_WhenPersonIdIsInvalid()
+    [Theory]
+    [InlineData("  ")]
+    [InlineData("")]
+    public async Task ValidatePersonId_ShouldFail_WhenPersonIdIsEmptyOrWhitespaceInvalid(string expectedPersonId)
     {
         //Arrange
         var expectedRequest = new GetPersonDetailsRequest
         {
-            PersonId = 0
+            PersonId = expectedPersonId
         };
 
         //Act
         var actual = await _validator.TestValidateAsync(expectedRequest, cancellationToken: TestContext.Current.CancellationToken);
         
         //Assert
-        actual.ShouldHaveValidationErrorFor(x => x.PersonId);
+        actual.ShouldHaveValidationErrorFor(x => x.PersonId).WithErrorMessage("PersonId is required");
+    }
+    
+    [Fact]
+    public async Task ValidatePersonId_ShouldFail_WhenPersonIdIsInvalid()
+    {
+        //Arrange
+        var expectedRequest = new GetPersonDetailsRequest
+        {
+            PersonId = "Invalid_Guid"
+        };
+
+        //Act
+        var actual = await _validator.TestValidateAsync(expectedRequest, cancellationToken: TestContext.Current.CancellationToken);
+        
+        //Assert
+        actual.ShouldHaveValidationErrorFor(x => x.PersonId).WithErrorMessage("Invalid PersonId");
     }
     
     [Fact]
@@ -35,7 +53,7 @@ public class GetPersonDetailsRequestValidatorTests
         //Arrange
         var expectedRequest = new GetPersonDetailsRequest
         {
-            PersonId = 12345
+            PersonId = Guid.NewGuid().ToString()
         };
 
         //Act

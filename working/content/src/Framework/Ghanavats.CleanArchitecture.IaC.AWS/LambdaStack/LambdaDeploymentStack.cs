@@ -7,11 +7,9 @@ namespace Ghanavats.CleanArchitecture.IaC.Aws.LambdaStack;
 public class LambdaDeploymentStack : Stack
 {
     internal static Function CleanArchitectureLambda;
-    
+
     internal LambdaDeploymentStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
     {
-        #region Lambda Functions
-
         const string apiProjectPath = "src/InterfaceAdapters/Ghanavats.CleanArchitecture.Api";
 
         var lambdaFunction = new Function(this, "CleanArchitecture_Function", new FunctionProps
@@ -43,9 +41,7 @@ public class LambdaDeploymentStack : Stack
                 }
             })
         });
-        
-        CleanArchitectureLambda = lambdaFunction;
 
-        #endregion
+        CleanArchitectureLambda = lambdaFunction;
     }
 }

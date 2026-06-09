@@ -7,7 +7,7 @@ namespace Ghanavats.CleanArchitecture.Api.HealthChecks;
 /// It is useful when a long-running task is being executed to prevent further requests while the long-running task is running.
 /// </summary>
 [ExcludeFromCodeCoverage]
-public class StartupBackgroundService : BackgroundService
+public sealed class StartupBackgroundService : BackgroundService
 {
     private readonly StartupHealthCheck _healthCheck;
     

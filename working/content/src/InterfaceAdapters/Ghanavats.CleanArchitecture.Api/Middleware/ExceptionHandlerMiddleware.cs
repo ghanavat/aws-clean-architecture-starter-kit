@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Ghanavats.CleanArchitecture.Api.Middleware;
 
 [ExcludeFromCodeCoverage]
-public class ExceptionHandlerMiddleware : IExceptionHandler
+public sealed class ExceptionHandlerMiddleware : IExceptionHandler
 {
     private readonly ILogger<ExceptionHandlerMiddleware> _logger;
     

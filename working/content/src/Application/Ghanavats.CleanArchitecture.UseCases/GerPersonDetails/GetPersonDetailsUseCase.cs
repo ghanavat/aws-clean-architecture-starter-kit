@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
-using Ghanavats.CleanArchitecture.Core.Entities;
+using Ghanavats.CleanArchitecture.UseCases.Contracts;
 using Ghanavats.CleanArchitecture.UseCases.GerPersonDetails.Requests;
+using Ghanavats.CleanArchitecture.UseCases.GerPersonDetails.Responses;
 using Ghanavats.ResultPattern;
 using Microsoft.Extensions.Logging;
 
@@ -8,24 +9,28 @@ namespace Ghanavats.CleanArchitecture.UseCases.GerPersonDetails;
 
 public interface IGetPersonDetails
 {
-    Task<Result<Person>> GetDetails(GetPersonDetailsRequest request);
+    Task<Result<GetPersonByIdResponse>> GetDetails(GetPersonDetailsRequest request);
 }
 
 /// <summary>
 /// A greatly simplified sample use-case to fetch/create Person data.
 /// </summary>
-public class GetPersonDetailsUseCase : IGetPersonDetails
+public sealed class GetPersonDetailsUseCase : IGetPersonDetails
 {
+    private readonly IPeopleRepository _peopleRepository;
     private readonly IValidator<GetPersonDetailsRequest> _validator;
     private readonly ILogger<GetPersonDetailsUseCase> _logger;
 
-    public GetPersonDetailsUseCase(IValidator<GetPersonDetailsRequest> validator, ILogger<GetPersonDetailsUseCase> logger)
+    public GetPersonDetailsUseCase(IPeopleRepository peopleRepository, 
+        IValidator<GetPersonDetailsRequest> validator, 
+        ILogger<GetPersonDetailsUseCase> logger)
     {
+        _peopleRepository = peopleRepository;
         _validator = validator;
         _logger = logger;
     }
 
-    public async Task<Result<Person>> GetDetails(GetPersonDetailsRequest request)
+    public async Task<Result<GetPersonByIdResponse>> GetDetails(GetPersonDetailsRequest request)
     {
         var validationResult = await _validator.ValidateAsync(request);
         if (!validationResult.IsValid)
@@ -38,14 +43,12 @@ public class GetPersonDetailsUseCase : IGetPersonDetails
             return Result.Invalid(validationResult);
         }
 
-        var person = new Person
+        var person = await _peopleRepository.GetPersonById(Guid.Parse(request.PersonId));
+        if (person.Id.Equals(Guid.Empty))
         {
-            Name = "SomeName",
-            Email = "SomeEmail",
-            Phone = "SomePhone",
-            DateOfBirth = new DateTime(2000, 1, 1)
-        };
-
-        return Result<Person>.Success(person);
+            return Result.NotFound();
+        }
+        
+        return Result<GetPersonByIdResponse>.Success(person.ToResponse());
     }
 }

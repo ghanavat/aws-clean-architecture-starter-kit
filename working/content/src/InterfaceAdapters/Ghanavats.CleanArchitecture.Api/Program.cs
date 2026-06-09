@@ -1,6 +1,8 @@
+using Amazon.DynamoDBv2;
 using Ghanavats.CleanArchitecture.Api.DependencyInjection;
 using Ghanavats.CleanArchitecture.Api.HealthChecks;
 using Ghanavats.CleanArchitecture.Api.Middleware;
+using Ghanavats.CleanArchitecture.Infrastructure.DependencyInjection;
 using Ghanavats.CleanArchitecture.UseCases.DependencyInjection;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -13,6 +15,7 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 // Add services to the container.
 builder.Services.AddValidators();
 builder.Services.AddUseCases();
+builder.Services.AddRepositories();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi("aws_cleanArchitecture_starterKit");
@@ -29,6 +32,9 @@ builder.Services.AddProblemDetails(options =>
         // If you want to customise how ProblemDetails is defined and put together.
     };
 });
+
+// Experimenting this for now
+builder.Services.AddAWSService<IAmazonDynamoDB>();
 
 var app = builder.Build();
 

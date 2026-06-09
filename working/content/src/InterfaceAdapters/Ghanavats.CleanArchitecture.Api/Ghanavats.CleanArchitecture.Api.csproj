@@ -10,11 +10,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\Ghanavats.CleanArchitecture.UseCases\Ghanavats.CleanArchitecture.UseCases.csproj" />
+    <ProjectReference Include="..\..\Framework\Ghanavats.CleanArchitecture.Infrastructure\Ghanavats.CleanArchitecture.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Shared\Ghanavats.CleanArchitecture.Shared\Ghanavats.CleanArchitecture.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="2.1.0" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
   </ItemGroup>
 
