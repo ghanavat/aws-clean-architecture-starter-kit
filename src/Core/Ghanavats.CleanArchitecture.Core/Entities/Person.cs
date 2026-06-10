@@ -9,7 +9,7 @@ public sealed class Person : EntityBase
     public string Name { get; init; } = string.Empty;
     public string Email { get; init; } = string.Empty;
     public string Phone { get; init; } = string.Empty;
-    public string DateOfBirth { get; init; }
+    public string DateOfBirth { get; init; } = string.Empty;
 
     public Person()
     {
