@@ -9,7 +9,7 @@ public sealed class Person : EntityBase
     public string Name { get; init; } = string.Empty;
     public string Email { get; init; } = string.Empty;
     public string Phone { get; init; } = string.Empty;
-    public DateTime DateOfBirth { get; init; } = DateTime.MinValue;
+    public string DateOfBirth { get; init; }
 
     public Person()
     {
@@ -19,7 +19,7 @@ public sealed class Person : EntityBase
         string name,
         string email,
         string phone,
-        DateTime dateOfBirth)
+        string dateOfBirth)
     {
         Id = id;
         Name = name;
@@ -28,12 +28,12 @@ public sealed class Person : EntityBase
         DateOfBirth = dateOfBirth;
     }
 
-    public static Person Create(string name, string email, string phone, DateTime dateOfBirth)
+    public static Person Create(string name, string email, string phone, string dateOfBirth)
     {
         return new Person(Guid.NewGuid(), name, email, phone, dateOfBirth);
     }
 
-    public static Person Rehydrate(Guid id, string name, string email, string phone, DateTime dateOfBirth)
+    public static Person Rehydrate(Guid id, string name, string email, string phone, string dateOfBirth)
     {
         return new Person(id, name, email, phone, dateOfBirth);
     }

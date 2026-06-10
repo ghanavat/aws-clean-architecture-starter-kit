@@ -41,7 +41,7 @@ public class LambdaDeploymentStack : Stack
                 }
             })
         });
-
+        
         CleanArchitectureLambda = lambdaFunction;
     }
 }

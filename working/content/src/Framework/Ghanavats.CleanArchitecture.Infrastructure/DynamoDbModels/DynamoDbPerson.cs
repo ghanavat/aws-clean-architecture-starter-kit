@@ -6,8 +6,8 @@ namespace Ghanavats.CleanArchitecture.Infrastructure.DynamoDbModels;
 [DynamoDBTable("People")]
 public sealed class DynamoDbPerson
 {
-    [DynamoDBHashKey(AttributeName =  "PersonId")]
-    public Guid PersonId { get; init; }
+    [DynamoDBHashKey]
+    public string PersonId { get; init; } = string.Empty;
     [DynamoDBProperty]
     public string Name { get; init; } = string.Empty;
     [DynamoDBProperty]
@@ -15,7 +15,7 @@ public sealed class DynamoDbPerson
     [DynamoDBProperty]
     public string Phone { get; init; } = string.Empty;
     [DynamoDBProperty]
-    public DateTime DateOfBirth { get; init; } = DateTime.MinValue;
+    public string DateOfBirth { get; init; } = string.Empty;
 }
 
 internal static class PersonMapper
@@ -29,7 +29,7 @@ internal static class PersonMapper
                 return new Person();
             }
             
-            return Person.Rehydrate(source.PersonId, 
+            return Person.Rehydrate(Guid.Parse(source.PersonId), 
                 source.Name, source.Email, 
                 source.Phone,  source.DateOfBirth);
         }

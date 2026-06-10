@@ -1,10 +1,11 @@
+using System.Runtime.InteropServices.JavaScript;
 using Ghanavats.CleanArchitecture.Core.Entities;
 
 namespace Ghanavats.CleanArchitecture.UseCases.GerPersonDetails.Responses;
 
 public sealed class GetPersonByIdResponse
 {
-    public Guid PersonId { get; set; }
+    public Guid PersonId { get; set; } = Guid.Empty;
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
@@ -23,7 +24,7 @@ public static class ResponseMapper
                 Name = source.Name,
                 Email = source.Email,
                 Phone = source.Phone,
-                DateOfBirth = source.DateOfBirth
+                DateOfBirth = DateTime.Parse(source.DateOfBirth)
             };
         }
     }
