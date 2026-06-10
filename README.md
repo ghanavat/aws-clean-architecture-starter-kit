@@ -1,44 +1,17 @@
-# aws-clean-architecture-starter-kit
-An AWS powered Clean Architecture template that helps to build a fully working Clean Architecture codebase and publish it to AWS in seconds.
-
-# ⚠️ Early Work In Progress
-This project is currently under active development.
-
-## Current status
-* [x] Clean Architecture Template
-* [x] Microsoft Template Engine
-* [x] IaC project created and a draft stack created
-* [x] AWS CDK for Lambda and API Gateway implemented
-
-## Planned
-1. [ ] AWS CDK 
-2. [ ] Lambda
-3. [ ] API Gateway
-4. [ ] DynamoDB
-5. [ ] CloudWatch
-
-**Feedback and suggestions are welcome.**
-
-# Multi stacks scenario
-When your CDK app has more than one stack, use '--all' option.
-```shell
-cdk deploy --all
-```
-The same applies when you want to destroy your resources.
-```shell
-cdk destroy --all
-```
-
-// ------------------------- NEW --------------------------
-
 # AWS Clean Architecture Starter Kit
 
 A .NET Clean Architecture solution template designed to provide a practical starting point for building serverless applications on AWS.
 
 The goal of this project is to reduce the amount of boilerplate and infrastructure work required to get a new API running on AWS while maintaining a clean and maintainable architecture.
 
-## Features
+## Current status
+This project is actively maintained and under development.
 
+The current version provides a deployable serverless foundation based on .NET, AWS Lambda, API Gateway, DynamoDB and AWS CDK.
+
+Additional AWS services and deployment patterns will be added over time.
+
+## Features
 * Clean Architecture
 * ASP.NET Core Minimal API
 * AWS Lambda hosting
@@ -50,7 +23,7 @@ The goal of this project is to reduce the amount of boilerplate and infrastructu
 * Global exception handling
 * Health check endpoints
 * xUnit unit testing
-* Architecture tests (TBC)
+* Architecture tests (Under development)
 
 ## Architecture
 
@@ -139,7 +112,7 @@ The intention is that the entire solution can be deployed without requiring manu
 * Global exception handling
 * Health checks
 * Unit tests
-* Architecture tests (TBC)
+* Architecture tests (Under development)
 
 ### Planned
 
@@ -336,3 +309,5 @@ The ASP.NET Core application does not validate API Keys and is unaware of the AP
 This mechanism provides a basic level of access control and request throttling but should not be considered a replacement for authentication and authorisation.
 
 For production workloads, consider integrating a dedicated authentication provider such as Amazon Cognito or another identity provider.
+
+**Feedback and suggestions are welcome.**
