@@ -1,3 +1,4 @@
+using System.Globalization;
 using FluentValidation;
 using FluentValidation.Results;
 using Ghanavats.CleanArchitecture.Core.Entities;
@@ -59,7 +60,7 @@ public class GetPersonDetailsUseCaseTests
         };
 
         _peopleRepositoryMock.Setup(x => x.GetPersonById(It.IsAny<Guid>()))
-            .ReturnsAsync(Person.Create("TestName", "test@domain.com", "123456789", new DateTime(1990, 01, 01)));
+            .ReturnsAsync(Person.Create("TestName", "test@domain.com", "123456789", new DateTime(1990, 01, 01).ToString(CultureInfo.InvariantCulture)));
         _validatorMock.Setup(x => x.ValidateAsync(It.IsAny<GetPersonDetailsRequest>())).ReturnsAsync(new ValidationResult());
         _loggerMock.Setup(x => x.IsEnabled(It.IsAny<LogLevel>())).Returns(true);
         

@@ -7,9 +7,9 @@
     "ClassLibrary",
     "xUnit"
   ],
-  "name": "Ghanavats Clean Architecture Templates",
-  "description": "A template for creating an empty Clean Architecture application that can run on .NET on Windows, Linux and macOS",
-  "identity": "Ghanavats.CleanArchitecture.Templates",
+  "name": "Ghanavats AWS Clean Architecture Starter Kit Template",
+  "description": "A deployable .NET Clean Architecture template featuring AWS Lambda, API Gateway, DynamoDB and Infrastructure as Code using AWS CDK.",
+  "identity": "Ghanavats.CleanArchitecture.Template",
   "shortName": "ghanavats_aws_cleanarc_starter",
   "tags": {
     "language": "C#",
