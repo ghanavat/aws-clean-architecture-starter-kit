@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\InterfaceAdapters\Ghanavats.CleanArchitecture.Api\Ghanavats.CleanArchitecture.Api.csproj" />
+    <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
   </ItemGroup>
 
   <ItemGroup>
-    <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+    <ProjectReference Include="..\..\src\Presentation\Ghanavats.CleanArchitecture.Api\Ghanavats.CleanArchitecture.Api.csproj" />
   </ItemGroup>
 
 </Project>

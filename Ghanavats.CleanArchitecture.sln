@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.Api", "src\InterfaceAdapters\Ghanavats.CleanArchitecture.Api\Ghanavats.CleanArchitecture.Api.csproj", "{94955135-8D37-483B-93C9-6126AEF99D62}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.UseCases", "src\Application\Ghanavats.CleanArchitecture.UseCases\Ghanavats.CleanArchitecture.UseCases.csproj", "{A3463358-2B9F-4FED-B9CF-011E800BEE7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.Shared", "src\Shared\Ghanavats.CleanArchitecture.Shared\Ghanavats.CleanArchitecture.Shared.csproj", "{71F7F2D2-5506-4B5C-9FF2-CDFD3F91DC35}"
@@ -19,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.Api.Tests", "tests\Ghanavats.CleanArchitecture.Api.Tests\Ghanavats.CleanArchitecture.Api.Tests.csproj", "{B7F5352F-4E1A-4236-8A99-E1C95CCADE0F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InterfaceAdapters", "InterfaceAdapters", "{E68CD84D-E0E5-33D6-F5EB-1781B188017D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E68CD84D-E0E5-33D6-F5EB-1781B188017D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8D626EA8-CB54-BC41-363A-217881BEBA6E}"
 EndProject
@@ -44,6 +42,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0E3EAB1E-1001-41ED-941C-125EEBD5CBE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghanavats.CleanArchitecture.Api", "src\Presentation\Ghanavats.CleanArchitecture.Api\Ghanavats.CleanArchitecture.Api.csproj", "{898A2977-16B4-4F08-B7D8-70DF98673E46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,18 +54,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|x64.Build.0 = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Debug|x86.Build.0 = Debug|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|x64.ActiveCfg = Release|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|x64.Build.0 = Release|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|x86.ActiveCfg = Release|Any CPU
-		{94955135-8D37-483B-93C9-6126AEF99D62}.Release|x86.Build.0 = Release|Any CPU
 		{A3463358-2B9F-4FED-B9CF-011E800BEE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3463358-2B9F-4FED-B9CF-011E800BEE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3463358-2B9F-4FED-B9CF-011E800BEE7A}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -186,12 +174,23 @@ Global
 		{E24E051C-997D-4E7B-9002-E5DA181AEEA6}.Release|x64.Build.0 = Release|Any CPU
 		{E24E051C-997D-4E7B-9002-E5DA181AEEA6}.Release|x86.ActiveCfg = Release|Any CPU
 		{E24E051C-997D-4E7B-9002-E5DA181AEEA6}.Release|x86.Build.0 = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|x64.Build.0 = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Debug|x86.Build.0 = Debug|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|x64.ActiveCfg = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|x64.Build.0 = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|x86.ActiveCfg = Release|Any CPU
+		{898A2977-16B4-4F08-B7D8-70DF98673E46}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{94955135-8D37-483B-93C9-6126AEF99D62} = {E68CD84D-E0E5-33D6-F5EB-1781B188017D}
 		{A3463358-2B9F-4FED-B9CF-011E800BEE7A} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 		{2373B394-1DAE-4AA5-B1D2-1CD890C31FD6} = {E0AD1809-C64F-3D39-45E0-E424261CE16D}
 		{907B3E50-C629-4F87-B167-A979209F564E} = {8D626EA8-CB54-BC41-363A-217881BEBA6E}
@@ -207,5 +206,6 @@ Global
 		{E24E051C-997D-4E7B-9002-E5DA181AEEA6} = {E0AD1809-C64F-3D39-45E0-E424261CE16D}
 		{0E3EAB1E-1001-41ED-941C-125EEBD5CBE4} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{71F7F2D2-5506-4B5C-9FF2-CDFD3F91DC35} = {0E3EAB1E-1001-41ED-941C-125EEBD5CBE4}
+		{898A2977-16B4-4F08-B7D8-70DF98673E46} = {E68CD84D-E0E5-33D6-F5EB-1781B188017D}
 	EndGlobalSection
 EndGlobal
