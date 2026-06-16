@@ -4,7 +4,7 @@ using Ghanavats.CleanArchitecture.Core.Entities;
 namespace Ghanavats.CleanArchitecture.Infrastructure.DynamoDbModels;
 
 [DynamoDBTable("People")]
-public sealed class DynamoDbPerson
+internal sealed class DynamoDbPerson
 {
     [DynamoDBHashKey]
     public string PersonId { get; init; } = string.Empty;

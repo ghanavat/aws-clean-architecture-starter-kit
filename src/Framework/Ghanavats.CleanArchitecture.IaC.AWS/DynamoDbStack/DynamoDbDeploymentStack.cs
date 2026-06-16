@@ -2,6 +2,7 @@ using Amazon.CDK;
 using Amazon.CDK.AWS.DynamoDB;
 using Constructs;
 using Ghanavats.CleanArchitecture.IaC.Aws.LambdaStack;
+using Attribute = Amazon.CDK.AWS.DynamoDB.Attribute;
 
 namespace Ghanavats.CleanArchitecture.IaC.Aws.DynamoDbStack;
 

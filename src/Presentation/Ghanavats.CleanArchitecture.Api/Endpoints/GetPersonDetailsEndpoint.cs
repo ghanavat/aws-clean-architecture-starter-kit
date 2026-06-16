@@ -23,6 +23,7 @@ public static class GetPersonDetailsEndpoint
                     };
 
                     var result = await getPersonDetails.GetDetails(request);
+                    
                     return await result.ToResultAsync();
                 })
             .Produces<Result<GetPersonByIdResponse>>()

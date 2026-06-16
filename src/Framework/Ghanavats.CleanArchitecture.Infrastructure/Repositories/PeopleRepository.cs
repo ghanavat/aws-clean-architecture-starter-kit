@@ -7,7 +7,7 @@ using Ghanavats.CleanArchitecture.UseCases.Contracts;
 
 namespace Ghanavats.CleanArchitecture.Infrastructure.Repositories;
 
-public sealed class PeopleRepository : IPeopleRepository
+internal sealed class PeopleRepository : IPeopleRepository    
 {
     private readonly DynamoDBContext _dbContext;
 
