@@ -1,3 +1,4 @@
+using Amazon;
 using Amazon.CDK;
 
 namespace Ghanavats.CleanArchitecture.IaC.Aws;
@@ -16,8 +17,8 @@ public static class AwsEnvironmentCreator
         
         return new Environment
         {
-            Account = "764401945112",
-            Region = "eu-west-1"
+            Account = "YouAWSAccountId",
+            Region = "YourAWSRegion - example: RegionEndpoint.EUWest1.DisplayName"
         };
     }
 }

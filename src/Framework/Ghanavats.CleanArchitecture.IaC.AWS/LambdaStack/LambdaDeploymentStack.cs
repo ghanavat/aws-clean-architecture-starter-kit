@@ -10,7 +10,7 @@ public class LambdaDeploymentStack : Stack
 
     internal LambdaDeploymentStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
     {
-        const string apiProjectPath = "src/InterfaceAdapters/Ghanavats.CleanArchitecture.Api";
+        const string apiProjectPath = "src/Presentation/Ghanavats.CleanArchitecture.Api";
 
         var lambdaFunction = new Function(this, "CleanArchitecture_Function", new FunctionProps
         {
