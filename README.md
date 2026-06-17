@@ -23,7 +23,7 @@ Additional AWS services and deployment patterns will be added over time.
 * Global exception handling
 * Health check endpoints
 * xUnit unit testing
-* Architecture tests (Under development)
+* Architecture tests
 
 ## Architecture
 
@@ -112,7 +112,7 @@ The intention is that the entire solution can be deployed without requiring manu
 * Global exception handling
 * Health checks
 * Unit tests
-* Architecture tests (Under development)
+* Architecture tests
 
 ### Planned
 

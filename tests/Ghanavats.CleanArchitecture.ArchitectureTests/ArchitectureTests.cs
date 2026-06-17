@@ -1,33 +1,11 @@
 using ArchUnitNET.Domain;
-using ArchUnitNET.Loader;
 using ArchUnitNET.xUnitV3;
-using Ghanavats.CleanArchitecture.Core.Entities;
-using Ghanavats.CleanArchitecture.Infrastructure.DependencyInjection;
-using Ghanavats.CleanArchitecture.Shared;
-using Ghanavats.CleanArchitecture.UseCases.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using static ArchUnitNET.Fluent.ArchRuleDefinition;
 
 namespace Ghanavats.CleanArchitecture.ArchitectureTests;
 
-public class ArchitectureTests
+public class ArchitectureTests : ArchitectureTestsBase
 {
-    private static readonly System.Reflection.Assembly PresentationAssembly = typeof(Program).Assembly;
-    private static readonly System.Reflection.Assembly InfrastructureAssembly = typeof(InfrastructureExtension).Assembly;
-    private static readonly System.Reflection.Assembly DomainAssembly = typeof(Person).Assembly;
-    private static readonly System.Reflection.Assembly ApplicationAssembly = typeof(RegisterApplicationServices).Assembly;
-    private static readonly System.Reflection.Assembly SharedAssembly = typeof(AssemblyMarker).Assembly;
-    
-    private readonly Architecture Architecture = new ArchLoader()
-        .LoadAssemblies(
-            PresentationAssembly,
-            InfrastructureAssembly,
-            DomainAssembly,
-            ApplicationAssembly,
-            SharedAssembly
-        )
-        .Build();
-
     private readonly IObjectProvider<IType> DomainLayer = Types()
         .That()
         .ResideInAssembly(DomainAssembly)
@@ -66,7 +44,7 @@ public class ArchitectureTests
         .As("Infrastructure Repositories");
     
     [Fact]
-    public void Types_In_Presentation_ShouldNotDependRepositories()
+    public void Types_In_Presentation_ShouldNotDirectlyDependOnRepositories()
     {
         Types().That().Are(PresentationLayer)
             .Should().NotDependOnAny(InfrastructureLayer)
